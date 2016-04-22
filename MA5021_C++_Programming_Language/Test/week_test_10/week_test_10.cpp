@@ -38,8 +38,8 @@ int main()
   while(in >> tmp1)
   {
     in >> tmp2;
-    tmp1=(tmp1<<10)+tmp2;
-    out.write(reinterpret_cast<char *>(&tmp1), sizeof(tmp1));
+    tmp1=(tmp1<<10) | tmp2;
+    out.write(reinterpret_cast<char *>(&tmp1), sizeof(int));
   }
   in.close();
   out.close();
@@ -54,12 +54,12 @@ int main()
     i=0;
     for(; i<3; ++i)
     {
-      showbitmap(i);
+//  showbitmap(i);
     }
     --i;
     for(; i>=0; --i)
     {
-      showbitmap(i);
+  //    showbitmap(i);
     }
   }
 
